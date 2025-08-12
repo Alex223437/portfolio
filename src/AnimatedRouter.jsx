@@ -3,8 +3,9 @@ import React, { lazy, Suspense, useRef } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { CSSTransition, SwitchTransition } from 'react-transition-group';
 
-const Home  = lazy(() => import('./Main/Main'));
-const About = lazy(() => import('./About/About'));
+const Home  = lazy(() => import('./Components/Main/Main'));
+const About = lazy(() => import('./Components/About/About'));
+const TechStack = lazy(() => import('./Components/Stack/Stack'));
 
 const withSuspense = (Comp) => <Suspense fallback={null}><Comp/></Suspense>;
 
@@ -32,6 +33,7 @@ export default function AnimatedRouter() {
           <Routes location={location}>
               <Route path="/" element={withSuspense(Home)} />
               <Route path="/about" element={withSuspense(About)} />
+              <Route path="/tech-stack" element={withSuspense(TechStack)} />
           </Routes>
         </div>
       </CSSTransition>

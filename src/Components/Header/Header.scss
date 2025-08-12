@@ -44,6 +44,9 @@
         background: var(--text-dark);
         transition: width 0.3s ease;
       }
+      &.active::before {
+        width: 100%;
+      }
     }
     &:hover {
         a::before {

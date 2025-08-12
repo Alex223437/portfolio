@@ -1,6 +1,25 @@
 import "./Header.scss"
 import Logo from "../../assets/img/logo.svg"  
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+
+const navItems = [
+  { to: "/", label: "Home" },
+  { to: "/about", label: "About" },
+  { to: "/tech-stack", label: "Tech Stack" },
+  { to: "/projects", label: "Projects" },
+  { to: "/contact", label: "Contact" },
+];
+
+const renderNavItem = (item) => (
+  <li className="header__item" key={item.to}>
+    <NavLink
+      to={item.to}
+      className={({ isActive }) => (isActive ? "active" : "")}
+    >
+      {item.label}
+    </NavLink>
+  </li>
+);
 
 const Header = () => {
   return (
@@ -9,21 +28,7 @@ const Header = () => {
         <img className="header__logo" src={Logo} alt="Logo" />
         <nav className="header__nav">
           <ul className="header__list">
-            <li className="header__item">
-              <Link to="/">Home</Link>
-            </li>
-            <li className="header__item">
-              <Link to="/about">About</Link>
-            </li>
-            <li className="header__item">
-              <Link to="/tech-stack">Tech Stack</Link>
-            </li>
-            <li className="header__item">
-              <Link to="/projects">Projects</Link>
-            </li>
-            <li className="header__item">
-              <Link to="/contact">Contact</Link>
-            </li>
+            {navItems.map(renderNavItem)}
           </ul>
           <div className="header__social">
             <a href="https://github.com/Alex223437" className="header__social-link">

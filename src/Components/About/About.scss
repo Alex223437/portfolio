@@ -1,5 +1,6 @@
 .about {
-  padding: 100px 0;
+  overflow: hidden;
+  position: relative;
   &__container {
     display: flex;
     flex-direction: column;
@@ -69,5 +70,15 @@
       line-height: 28px; /* 233.333% */
       letter-spacing: 1px;
     }
+  }
+  &__sun {
+    width: 400px;
+    height: 400px;
+    object-fit: contain;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translate(40%, -50%);
+    z-index: -1;
   }
 }

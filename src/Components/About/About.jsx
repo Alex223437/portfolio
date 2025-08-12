@@ -1,5 +1,5 @@
 import './About.scss';
-
+import Sun from '../../assets/img/sun.svg';
 
 const ListItem = ({ title, type, description, date, place }) => {
   return (
@@ -28,16 +28,18 @@ const ListItem = ({ title, type, description, date, place }) => {
 
 const About = () => {
   return (
-    <section className="about">
+    <section className="about section">
+      <img src={Sun} alt="Sun" className='about__sun'/>
       <div className="container about__container">
         <h2 className="about__heading">About Me</h2>
-        <p className="about__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis egestas rhoncus.</p>
+        <p className="about__description">Originally from Belarus, I moved to the Czech Republic in 2022 to study Software Engineering in Zlín. I’ve just finished my Bachelor’s at Tomas Bata University (2025) and I’m continuing with a Master’s (Ing.). I enjoy crafting clean, responsive interfaces in React and turning ideas into working features.</p>
+        <p className="about__description">Outside of code I’ve worked on fast‑paced teams in gastronomy (CZ & USA) — that taught me teamwork, discipline, and staying calm when it’s busy. I’m curious, quick to learn, and motivated to contribute to products that people actually use.</p>
         <h2 className="about__heading">Work Experience</h2>
         <ul className="about__list">
           <ListItem
             title="Freelance Frontend Developer"
             type="Part-Time"
-            description="Developed responsive web applications using React and Redux. Collaborated with designers and other developers to create user-friendly interfaces."
+            description="Developed responsive web applications using HTML5, CSS3, JS, React and Redux. Collaborated with designers and other developers to create user-friendly interfaces."
             date="Jan 2023 - Present"
           />
         </ul>
