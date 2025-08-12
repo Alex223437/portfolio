@@ -1,0 +1,7 @@
+.slide-in-enter, .slide-in-appear {
+  transform: translateX(400px);
+}
+.slide-in-enter-active, .slide-in-appear-active {
+  transform: translateX(0);
+  transition: transform 0.8s ease;
+}

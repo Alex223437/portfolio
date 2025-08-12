@@ -1,0 +1,17 @@
+.footer {
+  padding: 20px 0;
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__logo {
+    width: 150px;
+    height: 75px;
+    object-fit: contain;
+  }
+  &__text {
+    font-size: 14px;
+    color: var(--text-dark);
+  }
+}

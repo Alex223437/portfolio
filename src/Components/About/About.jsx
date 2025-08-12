@@ -1,5 +1,7 @@
 import './About.scss';
 import Sun from '../../assets/img/bg-icons/sun.svg';
+import { useState, useEffect, useRef } from 'react';
+import { CSSTransition } from 'react-transition-group';
 
 const ListItem = ({ title, type, description, date, place }) => {
   return (
@@ -27,9 +29,26 @@ const ListItem = ({ title, type, description, date, place }) => {
 };
 
 const About = () => {
+  const [show, setShow] = useState(false);
+  const sunRef = useRef(null);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setShow(true), 1000);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <section className="about section">
-      <img src={Sun} alt="Sun" className='about__sun'/>
+      <CSSTransition
+        in={show}
+        timeout={800}
+        classNames="slide-in"
+        unmountOnExit
+        nodeRef={sunRef}
+        appear
+      >
+        <img ref={sunRef} src={Sun} alt="Sun" className='about__sun'/>
+      </CSSTransition>
       <div className="container about__container">
         <h2 className="about__heading">About Me</h2>
         <p className="about__description">Originally from Belarus, I moved to the Czech Republic in 2022 to study Software Engineering in Zlín. I’ve just finished my Bachelor’s at Tomas Bata University (2025) and I’m continuing with a Master’s (Ing.). I enjoy crafting clean, responsive interfaces in React and turning ideas into working features.</p>

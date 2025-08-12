@@ -29,11 +29,10 @@
   &__star {
     position: absolute;
     top: 0;
-    right: 0;
+    right: -50px;
     width: 300px;
     height: 300px;
     object-fit: contain;
-    transform: translate(50px, 0);
     z-index: -1;
     user-select: none;
     -webkit-user-drag: none;

@@ -16,7 +16,7 @@
     letter-spacing: -1px;
     color: var(--heading-dark);
     &-name {
-      background: linear-gradient(90deg, #D18B47 20%, #42446E 120%);
+      background: linear-gradient(90deg, #D18B47 20%, #7C89C5 120%);
       background-clip: text;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -28,5 +28,29 @@
     width: 100%;
     height: 100%;
     object-fit: contain;
+    justify-self: end;
+  }
+  .fade-slide-enter { opacity: 0; transform: translateY(15px); }
+  .fade-slide-enter-active {
+    opacity: 1; transform: translateY(0);
+    transition: opacity .8s ease, transform .8s ease;
+  }
+  .fade-slide-appear { opacity: 0; transform: translateY(15px); }
+  .fade-slide-appear-active {
+    opacity: 1; transform: translateY(0);
+    transition: opacity .8s ease, transform .8s ease;
+  }
+
+  .fade-scale-appear,
+  .fade-scale-enter {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  .fade-scale-appear-active,
+  .fade-scale-enter-active {
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity 1s ease, transform 1s ease;
+    transition-delay: 0.2s;
   }
 }

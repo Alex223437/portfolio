@@ -1,5 +1,7 @@
 import "./Stack.scss";
 import Star from "../../assets/img/bg-icons/star.svg";
+import { CSSTransition } from "react-transition-group";
+import { useEffect, useState, useRef } from "react";
 
 const icons = import.meta.glob('../../assets/icons/*.svg', {
   eager: true,
@@ -24,9 +26,26 @@ const SKILLS = [
 ].map(s => ({ ...s, src: srcOf(`${s.key}.svg`) }));
 
 const Stack = () => {
+  const [show, setShow] = useState(false);
+  const starRef = useRef(null);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setShow(true), 1000);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <section className="stack section">
-      <img src={Star} alt="Star" className="stack__star" />
+      <CSSTransition
+        in={show}
+        timeout={800}
+        classNames="slide-in"
+        unmountOnExit
+        nodeRef={starRef}
+        appear
+      >
+        <img ref={starRef} src={Star} alt="Star" className="stack__star" />
+      </CSSTransition>
       <div className="container stack__container">
         <div className="stack__text">
           <h2 className="stack__heading heading">My Tech Stack</h2>

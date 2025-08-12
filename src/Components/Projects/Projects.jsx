@@ -3,6 +3,8 @@ import AtsImg from "../../assets/img/projects/ats.png";
 import PortfolioImg from "../../assets/img/projects/portfolio.png";
 import ProjectImg from "../../assets/img/projects/project.png";
 import Cloud from "../../assets/img/bg-icons/cloud.svg";
+import { useEffect, useState, useRef } from "react";
+import { CSSTransition } from "react-transition-group";
 
 
 const projects = [
@@ -71,9 +73,25 @@ const ProjectItem = ({image, title, description, stack, liveDemo, sourceCode }) 
 };
 
 const Projects = () => {
+  const [show, setShow] = useState(false);
+  const cloudRef = useRef(null);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setShow(true), 1000);
+    return () => clearTimeout(timer);
+  }, []);
   return (
     <div className="projects section">
-      <img src={Cloud} alt="Cloud" className="projects__cloud"/>
+      <CSSTransition
+        in={show}
+        timeout={800}
+        classNames="slide-in"
+        unmountOnExit
+        nodeRef={cloudRef}
+        appear
+      >
+        <img ref={cloudRef} src={Cloud} alt="Cloud" className="projects__cloud"/>
+      </CSSTransition>
       <div className="container projects__container">
         <div className="projects__text">
           <h2 className="heading projects__title">Projects</h2>

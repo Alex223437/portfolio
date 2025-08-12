@@ -7,6 +7,7 @@ const Home  = lazy(() => import('./Components/Main/Main'));
 const About = lazy(() => import('./Components/About/About'));
 const TechStack = lazy(() => import('./Components/Stack/Stack'));
 const Projects = lazy(() => import('./Components/Projects/Projects'));
+const Contact = lazy(() => import('./Components/Contact/Contact'));
 
 const withSuspense = (Comp) => <Suspense fallback={null}><Comp/></Suspense>;
 
@@ -36,6 +37,7 @@ export default function AnimatedRouter() {
               <Route path="/about" element={withSuspense(About)} />
               <Route path="/tech-stack" element={withSuspense(TechStack)} />
               <Route path="/projects" element={withSuspense(Projects)} />
+              <Route path="/contact" element={withSuspense(Contact)} />
           </Routes>
         </div>
       </CSSTransition>
