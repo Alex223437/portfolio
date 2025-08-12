@@ -80,5 +80,7 @@
     top: 50%;
     transform: translate(40%, -50%);
     z-index: -1;
+    user-select: none;
+    -webkit-user-drag: none;
   }
 }

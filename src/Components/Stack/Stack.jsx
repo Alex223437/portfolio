@@ -1,5 +1,5 @@
 import "./Stack.scss";
-import Star from "../../assets/img/star.svg";
+import Star from "../../assets/img/bg-icons/star.svg";
 
 const icons = import.meta.glob('../../assets/icons/*.svg', {
   eager: true,

@@ -1,5 +1,5 @@
 import './About.scss';
-import Sun from '../../assets/img/sun.svg';
+import Sun from '../../assets/img/bg-icons/sun.svg';
 
 const ListItem = ({ title, type, description, date, place }) => {
   return (

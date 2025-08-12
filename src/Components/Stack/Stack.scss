@@ -35,5 +35,7 @@
     object-fit: contain;
     transform: translate(50px, 0);
     z-index: -1;
+    user-select: none;
+    -webkit-user-drag: none;
   }
 }
