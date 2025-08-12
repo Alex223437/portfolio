@@ -6,6 +6,7 @@ import { CSSTransition, SwitchTransition } from 'react-transition-group';
 const Home  = lazy(() => import('./Components/Main/Main'));
 const About = lazy(() => import('./Components/About/About'));
 const TechStack = lazy(() => import('./Components/Stack/Stack'));
+const Projects = lazy(() => import('./Components/Projects/Projects'));
 
 const withSuspense = (Comp) => <Suspense fallback={null}><Comp/></Suspense>;
 
@@ -34,6 +35,7 @@ export default function AnimatedRouter() {
               <Route path="/" element={withSuspense(Home)} />
               <Route path="/about" element={withSuspense(About)} />
               <Route path="/tech-stack" element={withSuspense(TechStack)} />
+              <Route path="/projects" element={withSuspense(Projects)} />
           </Routes>
         </div>
       </CSSTransition>
