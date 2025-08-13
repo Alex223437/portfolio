@@ -10,9 +10,35 @@ const navItems = [
   { to: "/contact", label: "Contact" },
 ];
 
+const mobileMenu = () => {
+  const nav = document.querySelector('.header__nav');
+  const burger = document.querySelector('.header__burger');
+
+  nav.classList.toggle('active');
+
+  if (nav.classList.contains('active')) {
+    document.body.style.overflow = 'hidden';
+    document.addEventListener('click', (e) => {
+      if (!nav.contains(e.target) && !burger.contains(e.target)) {
+        nav.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    });
+  } else {
+    document.body.style.overflow = '';
+    document.removeEventListener('click', (e) => {
+      if (!nav.contains(e.target) && !burger.contains(e.target)) {
+        nav.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    });
+  }
+}
+
 const renderNavItem = (item) => (
   <li className="header__item" key={item.to}>
     <NavLink
+      onClick={mobileMenu}
       to={item.to}
       className={({ isActive }) => (isActive ? "active" : "")}
     >
@@ -22,6 +48,7 @@ const renderNavItem = (item) => (
 );
 
 const Header = () => {
+
   return (
     <header className="header">
       <div className="container header__container">
@@ -69,7 +96,17 @@ const Header = () => {
               </svg>
             </a>
           </div>
+          <button className="header__close" onClick={mobileMenu}>
+            <svg xmlns="http://www.w3.org/2000/svg" width="525" height="525" viewBox="0 0 525 525" fill="none">
+              <path d="M15.5002 15.5002C24.8765 6.1266 37.592 0.86084 50.8502 0.86084C64.1084 0.86084 76.8238 6.1266 86.2002 15.5002L263 192.3L439.8 15.5002C449.23 6.39225 461.86 1.35254 474.97 1.46646C488.08 1.58038 500.621 6.83883 509.891 16.1092C519.161 25.3796 524.42 37.9203 524.534 51.0301C524.648 64.1399 519.608 76.7701 510.5 86.2002L333.7 263L510.5 439.8C519.608 449.23 524.648 461.86 524.534 474.97C524.42 488.08 519.161 500.621 509.891 509.891C500.621 519.161 488.08 524.42 474.97 524.534C461.86 524.648 449.23 519.608 439.8 510.5L263 333.7L86.2002 510.5C76.7701 519.608 64.1399 524.648 51.0301 524.534C37.9203 524.42 25.3796 519.161 16.1092 509.891C6.83883 500.621 1.58038 488.08 1.46646 474.97C1.35254 461.86 6.39225 449.23 15.5002 439.8L192.3 263L15.5002 86.2002C6.1266 76.8238 0.86084 64.1084 0.86084 50.8502C0.86084 37.592 6.1266 24.8765 15.5002 15.5002Z" fill="currentColor"/>
+            </svg>
+          </button>
         </nav>
+        <button className="header__burger" onClick={mobileMenu}>
+          <svg xmlns="http://www.w3.org/2000/svg" width="534" height="400" viewBox="0 0 534 400" fill="none">
+            <path d="M33.667 366.667H300.334M33.667 200H500.334M233.667 33.3335H500.334" stroke="currentColor" strokeWidth="66.6667" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+        </button>
       </div>
     </header>
   )
