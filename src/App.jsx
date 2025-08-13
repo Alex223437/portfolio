@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 import Layout from './Components/Layout';
 import './App.scss'
 import AnimatedRouter from './AnimatedRouter';
