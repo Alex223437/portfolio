@@ -27,12 +27,16 @@ Built with **React**, **SCSS**, and **Vite**, featuring smooth animations, SEO o
 ---
 
 ## 📂 Project Structure
+
+```
 src/
-├── assets/        # Images, icons, and static files
-├── components/    # Reusable UI components
-├── sections/      # Page sections (Header, About, Projects, Contact, etc.)
-├── styles/        # SCSS partials and variables
-└── App.jsx        # Main app entry point
+├── assets/       # Fonts, icons, images
+├── Components/   # Page sections and UI components
+├── App.jsx       # Main app component
+├── App.scss      # Global app styles
+├── index.scss    # Base styles and variables
+└── main.jsx      # Entry point
+```
 
 ---
 
