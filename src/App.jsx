@@ -1,4 +1,4 @@
-import { BrowserRouter } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 import Layout from './Components/Layout';
 import './App.scss'
 import AnimatedRouter from './AnimatedRouter';
@@ -11,12 +11,12 @@ function App() {
   }, []);
 
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Layout>
         <AnimatedRouter />
       </Layout>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
-export default App
+export default App;
