@@ -1,11 +1,14 @@
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
-import { Suspense, lazy } from 'react'
 import Layout from './Components/Layout';
 import './App.scss'
-import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import AnimatedRouter from './AnimatedRouter';
+import { initTheme } from './Components/Theme/theme';
+import { useEffect } from 'react';
 
 function App() {
+  useEffect(() => {
+    initTheme();
+  }, []);
 
   return (
     <BrowserRouter>

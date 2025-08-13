@@ -21,10 +21,11 @@
     justify-self: center;
     height: 120px;
     width: 120px;
-    img {
+    img, svg {
       width: 100%;
       height: 100%;
       object-fit: contain;
+      color: var(--black);
     }
   }
   &__star {

@@ -59,13 +59,13 @@
     svg {
       width: 20px;
       height: 20px;
-      color: var(--text-light);
+      color: var(--text-dark);
     }
     &-place, &-date, &-description {
       display: flex;
       gap: 5px;
       align-items: center;
-      color: var(--text-light);
+      color: var(--text-dark);
       font-style: normal;
       font-weight: 500;
       line-height: 28px; /* 233.333% */
