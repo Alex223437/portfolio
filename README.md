@@ -1,12 +1,66 @@
-# React + Vite
+# 💼 Personal Portfolio — Alexei Sidoryk
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, fully responsive personal portfolio to showcase projects, skills, and contact information.  
+Built with **React**, **SCSS**, and **Vite**, featuring smooth animations, SEO optimization, and an intuitive layout.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## Expanding the ESLint configuration
+- Responsive design for desktop, tablet, and mobile
+- Smooth animations & transitions
+- SEO-friendly structure
+- Light & dark mode support
+- Projects section with live demo and source code links
+- Contact information & social links
+- Modular SCSS structure
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🛠 Tech Stack
+
+- **Frontend:** React, Vite, JavaScript (ES6+), SCSS
+- **Styling:** SCSS modules, CSS variables
+- **Icons & Images:** SVG & custom graphics
+- **Deployment:** Vercel / Netlify (choose your hosting)
+
+---
+
+## 📂 Project Structure
+src/
+├── assets/        # Images, icons, and static files
+├── components/    # Reusable UI components
+├── sections/      # Page sections (Header, About, Projects, Contact, etc.)
+├── styles/        # SCSS partials and variables
+└── App.jsx        # Main app entry point
+
+---
+
+## 📸 Preview
+
+![Portfolio Screenshot](./preview.png)
+
+---
+
+## 📜 License & Credits
+
+### 📌 Template Design
+- **Original design by:** [PavanMG on Figma](https://www.figma.com/@pavanmg007)
+
+### 📌 Icons
+- Icons from **dddoodle** by Seb  
+  Licensed under [Creative Commons Attribution 4.0](https://creativecommons.org/licenses/by/4.0/)  
+  Source: [fffuel.co](https://fffuel.co)
+
+### 📌 Code
+- All source code in this repository is © Alexei Sidoryk.  
+  **All rights reserved.**
+
+---
+
+## 📧 Contact
+
+- **Email:** alexeisidorik@gmail.com  
+- **GitHub:** [Alex223437](https://github.com/Alex223437)  
+- **LinkedIn:** [Alexei Sidoryk](https://www.linkedin.com/in/alexei-sidoryk/)  
+- **Telegram:** [@aliakseisi](https://t.me/aliakseisi)
