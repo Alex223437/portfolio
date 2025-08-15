@@ -84,6 +84,8 @@
   --text-light: #A7A7A7;
   --heading-light: #CCC;
   --black: #161616;
+  --project-bg: #fff;
+  --header-link: #666;
 }
 
 html {
@@ -108,6 +110,8 @@ html[data-theme="dark"] {
   --text-light: #42446E;
   --heading-light: #666;
   --black: #FFFFFF;
+  --project-bg: #363636;
+  --header-link: #fff;
 }
 
 html[data-theme="light"] {
