@@ -22,7 +22,7 @@ const projects = [
     title: "Personal Portfolio Website",
     description: "A modern, fully responsive personal portfolio website to showcase projects, skills, and contact information. Built with smooth animations, SEO optimization, fast performance, and an intuitive, user-friendly layout.",
     stack: ["React", "SCSS", "React Router", "Vite"],
-    liveDemo: "/",
+    liveDemo: import.meta.env.BASE_URL,
     sourceCode: "https://github.com/Alex223437/portfolio"
   },
   {
