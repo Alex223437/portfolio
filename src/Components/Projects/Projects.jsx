@@ -1,6 +1,7 @@
 import "./Projects.scss";
 import AtsImg from "../../assets/img/projects/ats.png";
 import PortfolioImg from "../../assets/img/projects/portfolio.png";
+import SovTechImg from "../../assets/img/projects/sov-tech-preview.png";
 import ProjectImg from "../../assets/img/projects/project.png";
 import Cloud from "../../assets/img/bg-icons/cloud.svg";
 import { useEffect, useState, useRef } from "react";
@@ -26,11 +27,11 @@ const projects = [
     sourceCode: "https://github.com/Alex223437/portfolio"
   },
   {
-    image: ProjectImg,
-    title: "Project Title goes here",
-    description: "This is sample project description random things are here in description This is sample project lorem ipsum generator for dummy content",
-    stack: ["HTML", "JavaScript", "SASS", "React"],
-    liveDemo: "#",
+    image: SovTechImg,
+    title: "SOV-TECH — Consulting Website",
+    description: "A modern, responsive multi-page site for a consulting company specializing in new project development. Includes smooth animations, adaptive design, and intuitive navigation. Migrated to WordPress for scalability and simple content management.",
+    stack: ["HTML", "JavaScript", "SASS", "WordPress"],
+    liveDemo: "https://sov-tech.ru/",
     sourceCode: "#"
   }
 ];
@@ -45,7 +46,7 @@ const ProjectItem = ({image, title, description, stack, liveDemo, sourceCode }) 
           {description}
         </p>
         <div className="projects__item-stack">
-          <span>Tech stack :</span> {stack.join(", ")}
+          <span>Tech stack:</span> {stack.join(", ")}
         </div>
         <div className="projects__item-links">
           <span className="projects__item-link">
