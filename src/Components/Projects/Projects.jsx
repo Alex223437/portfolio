@@ -1,0 +1,144 @@
+import "./Projects.scss";
+import AtsImg from "../../assets/img/projects/ats.png";
+import PortfolioImg from "../../assets/img/projects/portfolio.png";
+import SovTechImg from "../../assets/img/projects/sov-tech-preview.png";
+import ProjectImg from "../../assets/img/projects/project.png";
+import Cloud from "../../assets/img/bg-icons/cloud.svg";
+import { useEffect, useState, useRef } from "react";
+import { CSSTransition } from "react-transition-group";
+import toast, { Toaster } from "react-hot-toast";
+
+
+const projects = [
+   {
+    image: AtsImg,
+    title: "ATS – Automated Trading System",
+    description: "A full-stack web app for managing automated trading strategies. Features strategy creation and backtesting, AI-powered market predictions (LSTM + CNN), performance analytics, and live trading via broker integration.",
+    stack: ["React", "Python", "FastAPI", "PostgreSQL", "TensorFlow", "Docker"],
+    liveDemo: "#",
+    sourceCode: "https://github.com/Alex223437/ats"
+  },
+  {
+    image: PortfolioImg,
+    title: "Personal Portfolio Website",
+    description: "A modern, fully responsive personal portfolio website to showcase projects, skills, and contact information. Built with smooth animations, SEO optimization, fast performance, and an intuitive, user-friendly layout.",
+    stack: ["React", "SCSS", "React Router", "Vite"],
+    liveDemo: import.meta.env.BASE_URL,
+    sourceCode: "https://github.com/Alex223437/portfolio"
+  },
+  {
+    image: SovTechImg,
+    title: "SOV-TECH — Consulting Website",
+    description: "A modern, responsive multi-page site for a consulting company specializing in new project development. Includes smooth animations, adaptive design, and intuitive navigation. Migrated to WordPress for scalability and simple content management.",
+    stack: ["HTML", "JavaScript", "SASS", "WordPress"],
+    liveDemo: "https://sov-tech.ru/",
+    sourceCode: "#"
+  }
+];
+
+const ProjectItem = ({image, title, description, stack, liveDemo, sourceCode }) => {
+  return (
+    <li className="projects__item">
+      <img src={image} alt="" className="projects__item-image"/>
+      <div className="projects__item-text">
+        <h3 className="projects__item-title">{title}</h3>
+        <p className="projects__item-description">
+          {description}
+        </p>
+        <div className="projects__item-stack">
+          <span>Tech stack:</span> {stack.join(", ")}
+        </div>
+        <div className="projects__item-links">
+          <span className="projects__item-link">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 18 18" fill="none">
+              <path d="M10.2867 7.7133C9.60408 7.031 8.67846 6.64771 7.71334 6.64771C6.74821 6.64771 5.82259 7.031 5.14 7.7133L2.56584 10.2866C1.88324 10.9692 1.49976 11.895 1.49976 12.8604C1.49976 13.8257 1.88324 14.7515 2.56584 15.4341C3.24844 16.1167 4.17424 16.5002 5.13959 16.5002C6.10493 16.5002 7.03074 16.1167 7.71334 15.4341L9 14.1475M7.71332 10.2867C8.39591 10.969 9.32153 11.3523 10.2867 11.3523C11.2518 11.3523 12.1774 10.969 12.86 10.2867L15.4342 7.71334C16.1168 7.03074 16.5002 6.10493 16.5002 5.13959C16.5002 4.17424 16.1168 3.24844 15.4342 2.56584C14.7516 1.88324 13.8257 1.49976 12.8604 1.49976C11.8951 1.49976 10.9693 1.88324 10.2867 2.56584L8.99998 3.8525" stroke="currentColor" strokeWidth="1.66667" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+            <a
+              href={liveDemo}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={(e) => {
+                if (liveDemo === "#") {
+                  e.preventDefault();
+                  toast.error("Unfortunately live demo is not available :(");
+                }
+              }}
+            >
+              Live Demo
+            </a>
+          </span>
+          <span className="projects__item-link">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <g clipPath="url(#clip0_10_90)">
+                <path fillRule="evenodd" clipRule="evenodd" d="M10 0C4.475 0 0 4.475 0 10C0 14.425 2.8625 18.1625 6.8375 19.4875C7.3375 19.575 7.525 19.275 7.525 19.0125C7.525 18.775 7.5125 17.9875 7.5125 17.15C5 17.6125 4.35 16.5375 4.15 15.975C4.0375 15.6875 3.55 14.8 3.125 14.5625C2.775 14.375 2.275 13.9125 3.1125 13.9C3.9 13.8875 4.4625 14.625 4.65 14.925C5.55 16.4375 6.9875 16.0125 7.5625 15.75C7.65 15.1 7.9125 14.6625 8.2 14.4125C5.975 14.1625 3.65 13.3 3.65 9.475C3.65 8.3875 4.0375 7.4875 4.675 6.7875C4.575 6.5375 4.225 5.5125 4.775 4.1375C4.775 4.1375 5.6125 3.875 7.525 5.1625C8.325 4.9375 9.175 4.825 10.025 4.825C10.875 4.825 11.725 4.9375 12.525 5.1625C14.4375 3.8625 15.275 4.1375 15.275 4.1375C15.825 5.5125 15.475 6.5375 15.375 6.7875C16.0125 7.4875 16.4 8.375 16.4 9.475C16.4 13.3125 14.0625 14.1625 11.8375 14.4125C12.2 14.725 12.5125 15.325 12.5125 16.2625C12.5125 17.6 12.5 18.675 12.5 19.0125C12.5 19.275 12.6875 19.5875 13.1875 19.4875C15.1726 18.8173 16.8976 17.5414 18.1197 15.8395C19.3418 14.1375 19.9994 12.0952 20 10C20 4.475 15.525 0 10 0Z" fill="currentColor"/>
+              </g>
+              <defs>
+                <clipPath id="clip0_10_90">
+                  <rect width="20" height="20" fill="white"/>
+                </clipPath>
+              </defs>
+            </svg>
+            <a
+              href={sourceCode}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={(e) => {
+                if (sourceCode === "#") {
+                  e.preventDefault();
+                  toast("Source code is private :(", { icon: "🔒" });
+                }
+              }}
+            >
+              Source Code
+            </a>
+          </span>
+        </div>
+      </div>
+    </li>
+  )
+};
+
+const Projects = () => {
+  const [show, setShow] = useState(false);
+  const cloudRef = useRef(null);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setShow(true), 1000);
+    return () => clearTimeout(timer);
+  }, []);
+  return (
+    <div className="projects section">
+      <CSSTransition
+        in={show}
+        timeout={800}
+        classNames="slide-in"
+        unmountOnExit
+        nodeRef={cloudRef}
+        appear
+      >
+        <img ref={cloudRef} src={Cloud} alt="Cloud" className="projects__cloud"/>
+      </CSSTransition>
+      <div className="container projects__container">
+        <div className="projects__text">
+          <h2 className="heading projects__title">Projects</h2>
+          <p className="projects__description text">Things I’ve built so far :</p>
+        </div>
+        <ul className="projects__list">
+          {projects.map((project, index) => (
+            <ProjectItem
+              key={index}
+              image={project.image}
+              title={project.title}
+              description={project.description}
+              stack={project.stack}
+              liveDemo={project.liveDemo}
+              sourceCode={project.sourceCode}
+            />
+          ))}
+        </ul>
+      </div>
+    </div>
+  );
+};
+
+export default Projects;

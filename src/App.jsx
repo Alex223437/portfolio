@@ -1,35 +1,39 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { HashRouter } from 'react-router-dom';
+import Layout from './Components/Layout';
 import './App.scss'
+import AnimatedRouter from './AnimatedRouter';
+import { initTheme } from './Components/Theme/theme';
+import { useEffect } from 'react';
+import toast, { Toaster } from 'react-hot-toast';
 
 function App() {
-  const [count, setCount] = useState(0)
+  useEffect(() => {
+    initTheme();
+  }, []);
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <HashRouter>
+      <Layout>
+        <AnimatedRouter />
+        <Toaster
+         position='top-left'
+         toastOptions={{
+          style: {
+            border: "2px solid transparent",
+            backgroundClip: "padding-box, border-box",
+            backgroundImage: `linear-gradient(rgba(30,41,59,0.6), rgba(30,41,59,0.6)), 
+                              linear-gradient(90deg, #D18B47 20%, #7C89C5 120%)`,
+            borderRadius: "12px",
+            backdropFilter: "blur(16px)",
+            color: "#fff",
+            padding: "14px 18px",
+            fontSize: "16px",
+            fontWeight: 500,
+          },
+        }}/>
+      </Layout>
+    </HashRouter>
+  );
 }
 
-export default App
+export default App;
